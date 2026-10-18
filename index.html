@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MindSpace is a student wellness blog with gentle, practical ideas for managing study stress, building healthy routines, and finding balance.">
+<title>MindSpace | Student Wellness Blog</title>
+<style>
+:root{--ink:#263344;--muted:#667386;--purple:#6558a6;--purple-dark:#443878;--lav:#f1efff;--mint:#e5f6ee;--peach:#fff0e7;--paper:#fff;--line:#e7e8ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fcfbff;color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+.wrap{width:min(1080px,92%);margin:auto}a{color:inherit;text-decoration:none}
+header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0;gap:20px}.brand{font-size:1.35rem;font-weight:850;color:var(--purple-dark);letter-spacing:-.04em}.brand span{color:#d17d70}
+nav{display:flex;gap:22px;flex-wrap:wrap;font-size:.94rem;color:#4f5b6c}nav a:hover{color:var(--purple)}
+.btn{display:inline-block;background:var(--purple);color:white;padding:11px 17px;border-radius:999px;font-weight:750;border:0;cursor:pointer;font:inherit}.btn:hover{background:var(--purple-dark)}
+.hero{padding:70px 0 65px;background:linear-gradient(130deg,#f1efff 0%,#fff8f2 58%,#e8f8ef 100%)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:38px}
+.kicker{display:inline-block;padding:5px 12px;border-radius:999px;background:#fff;color:var(--purple-dark);font-size:.82rem;font-weight:800}
+h1{font-size:clamp(2.6rem,6vw,4.5rem);line-height:1.04;letter-spacing:-.06em;color:#37305f;margin:18px 0}
+.hero p{font-size:1.1rem;color:#5d6575;max-width:600px}.hero-art{background:#fff;border:1px solid #e8e2fa;border-radius:30px;padding:25px;box-shadow:0 22px 60px #44387815;transform:rotate(1deg)}
+.art-top{display:flex;align-items:center;justify-content:space-between;font-weight:800;color:var(--purple-dark)}.sun{height:65px;width:65px;border-radius:50%;background:#ffe0b8;display:grid;place-items:center;font-size:2rem;margin:20px auto}
+.mood-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.mood{border:1px solid var(--line);border-radius:14px;text-align:center;padding:10px 2px;background:#fff}.mood span{display:block;font-size:1.4rem}.mood small{color:var(--muted)}
+.art-note{margin-top:16px;padding:13px;border-radius:14px;background:var(--mint);color:#386b54;font-size:.9rem}
+section{padding:64px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 30px}.section-head h2{font-size:clamp(1.9rem,4vw,2.65rem);line-height:1.15;letter-spacing:-.045em;color:#37305f;margin:0 0 10px}.section-head p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:23px;box-shadow:0 8px 25px #32245e08}.icon{width:52px;height:52px;border-radius:17px;display:grid;place-items:center;font-size:1.55rem;background:var(--lav)}.card:nth-child(2) .icon{background:var(--mint)}.card:nth-child(3) .icon{background:var(--peach)}
+.card h3{margin:15px 0 7px;color:#37305f}.card p{color:var(--muted);margin:0 0 14px}.read{color:var(--purple);font-weight:800;cursor:pointer}.article{display:none;margin-top:18px;padding:23px;background:white;border:1px solid var(--line);border-radius:18px}.article.show{display:block}.article h3{margin-top:0;color:#37305f}
+.calm{background:#f2f0ff}.calm-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:center}.calm h2{font-size:2.25rem;line-height:1.15;letter-spacing:-.04em;color:#37305f;margin:0 0 12px}.breath-card{background:#fff;border:1px solid #e2def8;border-radius:24px;padding:25px;text-align:center}.breath-circle{width:145px;height:145px;border-radius:50%;background:radial-gradient(circle,#d9f4e5 0%,#c8e8da 55%,#eeeaff 56%);display:grid;place-items:center;margin:20px auto;font-weight:800;color:#3b6656;transition:transform 1.2s}.breath-circle.grow{transform:scale(1.12)}.breath-card p{color:var(--muted)}
+.checklist{background:white;border:1px solid var(--line);border-radius:22px;padding:22px}.checklist label{display:flex;gap:12px;padding:12px 2px;border-bottom:1px solid var(--line);cursor:pointer}.checklist label:last-of-type{border-bottom:0}.checklist input{width:18px;height:18px;accent-color:var(--purple);margin-top:5px}.count{color:var(--purple);font-weight:800}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.about-box{background:var(--mint);padding:26px;border-radius:24px}.about-box h3{margin-top:0;color:#2f644d}.about-box ul{padding-left:22px}
+.note{font-size:.92rem;color:#6d5360;background:#fff4f1;border:1px solid #ffe0d7;padding:15px;border-radius:14px}
+.contact{background:#f1efff;border-radius:24px;text-align:center;padding:34px}.contact input{max-width:330px;width:100%;padding:12px;border:1px solid #cfc9ec;border-radius:12px;font:inherit;margin:8px 5px 8px 0}.status{min-height:25px;color:var(--purple-dark);font-weight:700}
+footer{background:#30294e;color:#f3f0ff;padding:27px 0;margin-top:30px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer small{color:#d0cae9}
+@media(max-width:760px){.hero-grid,.calm-grid,.about-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column;gap:7px}nav{gap:14px}.hero{padding:48px 0}.hero-art{transform:none}section{padding:48px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#home">Mind<span>Space</span> ☁</a>
+<nav aria-label="Main navigation"><a href="#blog">Wellness Blog</a><a href="#pause">Take a Pause</a><a href="#routine">My Routine</a><a href="#about">About</a></nav>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-grid">
+<div><span class="kicker">A gentle corner for students</span><h1>Your mind matters.<br><span style="color:#b97569">Take a breath.</span></h1>
+<p>MindSpace is a student wellness blog with simple ideas for handling everyday study pressure, creating balanced routines, and making room for rest.</p>
+<a class="btn" href="#blog">Explore the blog ↓</a></div>
+<div class="hero-art"><div class="art-top"><span>How are you feeling today?</span><span>♡</span></div><div class="sun">☀️</div>
+<div class="mood-row"><div class="mood"><span>😊</span><small>Good</small></div><div class="mood"><span>😐</span><small>Okay</small></div><div class="mood"><span>😟</span><small>Stressed</small></div><div class="mood"><span>😴</span><small>Tired</small></div></div>
+<div class="art-note">A gentle reminder: you don't have to do everything at once. Choose one small next step.</div></div>
+</div></section>
+<section id="blog"><div class="wrap">
+<div class="section-head"><h2>Wellness notes for student life</h2><p>Practical ideas you can try at your own pace. Different approaches work for different people.</p></div>
+<div class="cards">
+<article class="card"><div class="icon">🌿</div><h3>Managing study stress</h3><p>Break big tasks into smaller steps and make a realistic plan for today.</p><a class="read" href="#article-stress" onclick="showArticle('stress');return false">Read article →</a></article>
+<article class="card"><div class="icon">🌙</div><h3>Building a calming routine</h3><p>Make space for sleep, meals, movement, study, and time away from screens.</p><a class="read" href="#article-routine" onclick="showArticle('routine');return false">Read article →</a></article>
+<article class="card"><div class="icon">💬</div><h3>When you need support</h3><p>Talking with a trusted person can be a useful first step when things feel difficult.</p><a class="read" href="#article-support" onclick="showArticle('support');return false">Read article →</a></article>
+</div>
+<div class="article" id="article-stress"><h3>Managing study stress</h3><p>When a task feels too big, write down the smallest possible first step. For example, replace “finish the whole chapter” with “read two pages and write three key points.” Work in a manageable session, take breaks, and adjust your plan when needed.</p><p><b>Try today:</b> Choose one priority, one smaller task, and one reasonable time to stop studying.</p></div>
+<div class="article" id="article-routine"><h3>Building a calming routine</h3><p>A helpful routine doesn't need to be perfect. Try to keep regular times for rest and sleep, eat regularly, get a little movement when possible, and take short breaks during study. Choose habits that fit your schedule and circumstances.</p><p><b>Try today:</b> Pick one small routine to repeat, such as preparing tomorrow's books before bed.</p></div>
+<div class="article" id="article-support"><h3>When you need support</h3><p>Everyone has difficult days. If worries or stress keep affecting daily life, consider talking with a trusted adult, family member, teacher, school counsellor, or qualified health professional. You deserve to be listened to and supported.</p><p><b>Remember:</b> This blog shares general wellness information. It is not a substitute for professional advice or care.</p></div>
+</div></section>
+<section class="calm" id="pause"><div class="wrap calm-grid">
+<div><span class="kicker">A small mindful pause</span><h2>Give yourself one quiet minute.</h2><p>Pause what you're doing if it feels comfortable. Relax your shoulders, notice your surroundings, and breathe naturally. There is no perfect way to do this—skip it if it doesn't feel helpful.</p><p>Use the button to guide a gentle, short pause.</p></div>
+<div class="breath-card"><h3 style="margin:0;color:#37305f">One-minute reset</h3><div class="breath-circle" id="breath-circle">Ready?</div><p id="breath-text">Find a comfortable position. Keep your breathing natural.</p><button class="btn" id="pause-btn" type="button">Start gentle pause</button></div>
+</div></section>
+<section id="routine"><div class="wrap">
+<div class="section-head"><h2>My gentle daily check-in</h2><p>Choose the basics you'd like to make room for today. This checklist runs in your browser and doesn't save your answers.</p></div>
+<div class="checklist">
+<label><input type="checkbox" class="routine-check"> Take a break between study sessions</label>
+<label><input type="checkbox" class="routine-check"> Drink water and eat regular meals</label>
+<label><input type="checkbox" class="routine-check"> Spend a little time away from screens</label>
+<label><input type="checkbox" class="routine-check"> Connect with someone I trust</label>
+<label><input type="checkbox" class="routine-check"> Make time to rest</label>
+<p class="count" id="routine-count">0 of 5 checked</p>
+</div></div></section>
+<section id="about"><div class="wrap about-grid">
+<div><div class="section-head" style="text-align:left;margin:0"><h2>About MindSpace</h2><p>A student wellness blog created to share approachable ideas for everyday balance.</p></div><p>Student life can include deadlines, change, friendships, and many competing priorities. MindSpace encourages small, realistic habits and reminds students that asking for support is okay.</p></div>
+<div class="about-box"><h3>What you'll find here</h3><ul><li>Study stress and planning tips</li><li>Rest and routine ideas</li><li>Gentle mindfulness activities</li><li>Encouragement to seek support when needed</li></ul></div>
+</div></section>
+<section id="contact"><div class="wrap"><div class="contact"><h2 style="color:#37305f;margin-top:0">A little note from MindSpace</h2><p style="color:#667386">This sample form demonstrates a website interaction. It does not collect, send, or store email addresses.</p>
+<form id="demo-form"><input type="email" id="email" placeholder="Email address (demo only)" aria-label="Email address" required><button class="btn" type="submit">Try demo form</button></form><div class="status" id="form-status" role="status"></div>
+</div><p class="note" style="margin-top:18px"><b>Wellness note:</b> MindSpace provides general educational information, not diagnosis, treatment, or emergency support. If you feel overwhelmed, talk to a trusted adult or qualified professional.</p></div></section>
+</main>
+<footer><div class="wrap foot"><div><b>MindSpace ☁</b><br><small>A gentle corner for student wellness.</small></div><small>Student project · Replace this line with your name, class, and course.</small></div></footer>
+<script>
+function showArticle(name){document.querySelectorAll('.article').forEach(el=>el.classList.remove('show'));const el=document.getElementById('article-'+name);if(el){el.classList.add('show');el.scrollIntoView({behavior:'smooth',block:'nearest'});}}
+const checks=[...document.querySelectorAll('.routine-check')];function updateRoutine(){document.getElementById('routine-count').textContent=checks.filter(c=>c.checked).length+' of '+checks.length+' checked';}checks.forEach(c=>c.addEventListener('change',updateRoutine));
+let pauseTimer=null;document.getElementById('pause-btn').addEventListener('click',function(){const circle=document.getElementById('breath-circle'),msg=document.getElementById('breath-text'),btn=this;if(pauseTimer){clearInterval(pauseTimer);pauseTimer=null;}let n=0;btn.disabled=true;btn.textContent='Pause in progress…';const prompts=['Notice your feet resting on the floor.','Relax your shoulders if that feels comfortable.','Breathe naturally and notice the space around you.','Choose one small next step for yourself.'];circle.textContent='Take a pause';msg.textContent=prompts[0];circle.classList.add('grow');pauseTimer=setInterval(()=>{n++;if(n<prompts.length){msg.textContent=prompts[n];circle.classList.toggle('grow');}else{clearInterval(pauseTimer);pauseTimer=null;circle.classList.remove('grow');circle.textContent='Well done';msg.textContent='Your minute is complete. Return to your day at your own pace.';btn.disabled=false;btn.textContent='Start again';}},15000);});
+document.getElementById('demo-form').addEventListener('submit',function(e){e.preventDefault();document.getElementById('form-status').textContent='Thanks for trying the demo. No email was sent or saved.';this.reset();});
+</script>
+</body></html>
